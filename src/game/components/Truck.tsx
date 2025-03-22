@@ -35,6 +35,24 @@ function Truck({
         <meshLambertMaterial color={color} />
       </mesh>
 
+      {/* front lights */}
+      <mesh castShadow receiveShadow position={[10, 7, 15]}>
+        <boxGeometry args={[2, 2, 2]} />
+        <meshLambertMaterial
+          color={0xffff00}
+          emissive={0xffff00}
+          emissiveIntensity={5}
+        />
+      </mesh>
+      <mesh castShadow receiveShadow position={[10, -7, 15]}>
+        <boxGeometry args={[2, 2, 2]} />
+        <meshLambertMaterial
+          color={0xffff00}
+          emissive={0xffff00}
+          emissiveIntensity={5}
+        />
+      </mesh>
+
       {/* windows */}
       <mesh castShadow receiveShadow position={[3, 0, 25]}>
         <boxGeometry args={[12, 22, 9]} />
