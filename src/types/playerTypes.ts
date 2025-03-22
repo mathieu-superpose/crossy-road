@@ -5,3 +5,8 @@ export type TPlayerState = {
   currentTile: number
   movesQueue: TDirection[]
 }
+
+export interface IPosition {
+  rowIndex: number
+  tileIndex: number
+}
