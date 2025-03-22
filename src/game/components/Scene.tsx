@@ -5,6 +5,7 @@ import Environment from "./Environment"
 function Scene({ children }: { children: React.ReactNode }) {
   return (
     <Canvas
+      shadows={true}
       orthographic={true}
       camera={{
         up: [0, 0, 1],

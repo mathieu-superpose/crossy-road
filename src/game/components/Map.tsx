@@ -6,8 +6,10 @@ import { rows } from "../../data/metadata"
 function Map() {
   return (
     <>
-      {/* first row */}
-      <Grass rowIndex={0} />
+      {/* first rows */}
+      {[-3, -2, -1, 0].map((tileIndex) => (
+        <Grass key={tileIndex} rowIndex={tileIndex} />
+      ))}
 
       {/* other rows */}
       {rows.map((rowData, index) => (
