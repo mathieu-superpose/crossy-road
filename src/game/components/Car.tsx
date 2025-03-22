@@ -1,9 +1,9 @@
-import { use, useRef } from "react"
+import { useRef } from "react"
 import * as THREE from "three"
 
 import { tileSize } from "../../data/constants"
 
-import { useVehiculeAnimation } from "../../hooks/useVehiculeAnimation"
+import { useVehicleAnimation } from "../../hooks/useVehicleAnimation"
 
 function Car({
   rowIndex,
@@ -20,7 +20,7 @@ function Car({
 }) {
   const carRef = useRef<THREE.Group>(null)
 
-  useVehiculeAnimation(carRef, direction, speed)
+  useVehicleAnimation(carRef, direction, speed)
 
   return (
     <group

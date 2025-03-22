@@ -3,7 +3,8 @@ import * as THREE from "three"
 
 import { tileSize } from "../../data/constants"
 
-import { useVehiculeAnimation } from "../../hooks/useVehiculeAnimation"
+import { useVehicleAnimation } from "../../hooks/useVehicleAnimation"
+import { complementaryColor } from "../../utils/color"
 
 function Truck({
   rowIndex,
@@ -20,7 +21,7 @@ function Truck({
 }) {
   const truckRef = useRef<THREE.Group>(null)
 
-  useVehiculeAnimation(truckRef, direction, speed)
+  useVehicleAnimation(truckRef, direction, speed)
 
   return (
     <group
@@ -53,7 +54,7 @@ function Truck({
       {/* container */}
       <mesh castShadow receiveShadow position={[-36, 0, 24]}>
         <boxGeometry args={[50, 20, 18]} />
-        <meshLambertMaterial color={0x00ff00} />
+        <meshLambertMaterial color={complementaryColor(color)} />
       </mesh>
 
       {/* wheels */}
