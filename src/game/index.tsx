@@ -4,6 +4,7 @@ import Map from "./components/Map"
 
 import Controls from "../components/Controls"
 import Score from "../components/Score"
+import Result from "../components/Result"
 
 import "./Game.css"
 
@@ -16,6 +17,7 @@ function Game() {
       </Scene>
       <Controls />
       <Score />
+      <Result />
     </div>
   )
 }

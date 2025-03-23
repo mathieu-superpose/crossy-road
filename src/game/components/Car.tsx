@@ -5,6 +5,8 @@ import { tileSize } from "../../data/constants"
 
 import { useVehicleAnimation } from "../../hooks/useVehicleAnimation"
 
+import useHitDetection from "../../hooks/useHitDetection"
+
 function Car({
   rowIndex,
   initialTileIndex,
@@ -21,6 +23,7 @@ function Car({
   const carRef = useRef<THREE.Group>(null)
 
   useVehicleAnimation(carRef, direction, speed)
+  useHitDetection(carRef, rowIndex)
 
   return (
     <group

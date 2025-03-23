@@ -6,6 +6,8 @@ import { tileSize } from "../../data/constants"
 import { useVehicleAnimation } from "../../hooks/useVehicleAnimation"
 import { complementaryColor } from "../../utils/color"
 
+import useHitDetection from "../../hooks/useHitDetection"
+
 function Truck({
   rowIndex,
   initialTileIndex,
@@ -22,6 +24,7 @@ function Truck({
   const truckRef = useRef<THREE.Group>(null)
 
   useVehicleAnimation(truckRef, direction, speed)
+  useHitDetection(truckRef, rowIndex)
 
   return (
     <group

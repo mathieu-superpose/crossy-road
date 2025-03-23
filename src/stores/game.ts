@@ -11,6 +11,9 @@ const useGameStore = create<IGameStore>((set) => ({
   endGame: () => {
     set({ status: "gameover" })
   },
+  reset: () => {
+    set({ status: "running" })
+  },
 }))
 
 export default useGameStore
