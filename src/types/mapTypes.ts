@@ -3,6 +3,7 @@ import { IVehicle } from "./vehicleTypes.ts"
 export interface IMapState {
   rows: TRow[]
   addRows: () => void
+  reset: () => void
 }
 
 type TRow = ICarLane | ITruckLane | IForest

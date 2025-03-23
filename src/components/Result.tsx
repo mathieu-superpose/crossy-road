@@ -1,11 +1,11 @@
-import useStore from "../stores/game"
+import useGameStore from "../stores/game"
 
 import "./Result.css"
 
 function Result() {
-  const status = useStore((state) => state.status)
-  const score = useStore((state) => state.score)
-  const reset = useStore((state) => state.reset)
+  const status = useGameStore((state) => state.status)
+  const score = useGameStore((state) => state.score)
+  const reset = useGameStore((state) => state.reset)
 
   if (status === "running") return null
 

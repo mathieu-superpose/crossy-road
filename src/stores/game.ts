@@ -1,5 +1,8 @@
 import { create } from "zustand"
 
+import useMapStore from "./map"
+import { reset as resetPlayerStore } from "./player"
+
 import { IGameStore } from "../types/gameTypes"
 
 const useGameStore = create<IGameStore>((set) => ({
@@ -12,7 +15,9 @@ const useGameStore = create<IGameStore>((set) => ({
     set({ status: "gameover" })
   },
   reset: () => {
-    set({ status: "running" })
+    useMapStore.getState().reset()
+    resetPlayerStore()
+    set({ status: "running", score: 0 })
   },
 }))
 
