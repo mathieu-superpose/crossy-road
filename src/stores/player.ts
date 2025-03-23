@@ -3,12 +3,13 @@ import { endsUpInValidPosition } from "../utils/playerPosition"
 import useMapStore from "./map"
 import useGameStore from "./game"
 
-import { TDirection, TPlayerState } from "../types/playerTypes"
+import { TDirection, TPlayerState, TPlayerRef } from "../types/playerTypes"
 
 export let state: TPlayerState = {
   currentRow: 0,
   currentTile: 0,
   movesQueue: [],
+  ref: null,
 }
 
 export function queueMove(direction: TDirection) {
@@ -39,4 +40,8 @@ export function stepCompleted() {
 
   // Update the score
   useGameStore.getState().updateScore(state.currentRow)
+}
+
+export function setRef(ref: TPlayerRef) {
+  state.ref = ref
 }

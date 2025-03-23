@@ -7,6 +7,8 @@ import { usePlayerAnimation } from "../../hooks/usePlayerAnimation.ts"
 
 import DirectionalLight from "./DriectionalLight.tsx"
 
+import { setRef } from "../../stores/player.ts"
+
 function Player() {
   const playerRef = useRef<THREE.Group>(null)
   const lightRef = useRef<THREE.DirectionalLight>(null)
@@ -22,6 +24,8 @@ function Player() {
 
     playerRef.current.add(camera)
     lightRef.current.target = playerRef.current;
+
+    setRef(playerRef.current)
   }, [])
 
   return (
