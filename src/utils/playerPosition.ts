@@ -1,5 +1,6 @@
 import { minTileIndex, maxTileIndex } from "../data/constants.ts"
-import { rows } from "../data/metadata.ts"
+
+import useMapStore from "../stores/map.ts"
 
 import { IPosition, TDirection } from "../types/playerTypes"
 
@@ -50,7 +51,7 @@ export function endsUpInValidPosition(
   }
 
   // Detect if we hit a tree
-  const finalRow = rows[finalPosition.rowIndex - 1]
+  const finalRow = useMapStore.getState().rows[finalPosition.rowIndex - 1]
   if (
     finalRow &&
     finalRow.type === "forest" &&

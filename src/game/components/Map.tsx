@@ -1,9 +1,13 @@
 import Grass from "./Grass"
 import Row from "./Row"
 
-import { rows } from "../../data/metadata"
+import useMapStore from "../../stores/map.ts"
+
+import { IMapState } from "../../types/mapTypes"
 
 function Map() {
+  const rows = useMapStore((state: IMapState) => state.rows)
+
   return (
     <>
       {/* first rows */}

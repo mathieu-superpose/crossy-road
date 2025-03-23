@@ -1,7 +1,7 @@
 import Road from "./Road"
 import Car from "./Car"
 
-import { IVehicle } from "../../types/vehiculeTypes.ts"
+import { IVehicle } from "../../types/vehicleTypes.ts"
 
 function CarLane({ rowIndex, rowData }: { rowIndex: number; rowData: any }) {
   return (

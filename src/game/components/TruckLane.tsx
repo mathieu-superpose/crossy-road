@@ -1,7 +1,7 @@
 import Road from "./Road.tsx"
 import Truck from "./Truck.tsx"
 
-import { IVehicle } from "../../types/vehiculeTypes.ts"
+import { IVehicle } from "../../types/vehicleTypes.ts"
 
 function TruckLane({ rowIndex, rowData }: { rowIndex: number; rowData: any }) {
   return (

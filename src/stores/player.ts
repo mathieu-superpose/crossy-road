@@ -14,7 +14,9 @@ export function queueMove(direction: TDirection) {
     [...state.movesQueue, direction]
   )
 
-  if (!isValidMove) return
+  if (!isValidMove) {
+    return
+  }
 
   state.movesQueue.push(direction)
 }
