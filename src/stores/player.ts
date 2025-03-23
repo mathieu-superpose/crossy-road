@@ -1,5 +1,7 @@
 import { endsUpInValidPosition } from "../utils/playerPosition"
 
+import useMapStore from "./map"
+
 import { TDirection, TPlayerState } from "../types/playerTypes"
 
 export let state: TPlayerState = {
@@ -28,4 +30,9 @@ export function stepCompleted() {
   if (direction === "backward") state.currentRow -= 1
   if (direction === "left") state.currentTile -= 1
   if (direction === "right") state.currentTile += 1
+
+  // Add new rows if the player is running out of them
+  if (state.currentRow === useMapStore.getState().rows.length - 10) {
+    useMapStore.getState().addRows()
+  }
 }
