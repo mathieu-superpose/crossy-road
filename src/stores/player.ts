@@ -1,6 +1,7 @@
 import { endsUpInValidPosition } from "../utils/playerPosition"
 
 import useMapStore from "./map"
+import useGameStore from "./game"
 
 import { TDirection, TPlayerState } from "../types/playerTypes"
 
@@ -35,4 +36,7 @@ export function stepCompleted() {
   if (state.currentRow === useMapStore.getState().rows.length - 10) {
     useMapStore.getState().addRows()
   }
+
+  // Update the score
+  useGameStore.getState().updateScore(state.currentRow)
 }

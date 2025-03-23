@@ -31,7 +31,7 @@ function Truck({
     >
       {/* body */}
       <mesh castShadow receiveShadow position={[0, 0, 20]}>
-        <boxGeometry args={[20, 20, 20]} />
+        <boxGeometry args={[20, 20, 22]} />
         <meshLambertMaterial color={color} />
       </mesh>
 
