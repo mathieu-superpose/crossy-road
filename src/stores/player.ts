@@ -13,6 +13,11 @@ export let state: TPlayerState = {
 }
 
 export function queueMove(direction: TDirection) {
+  const gameStatus = useGameStore.getState().status
+  if (gameStatus !== "running") {
+    return
+  }
+
   const isValidMove = endsUpInValidPosition(
     { rowIndex: state.currentRow, tileIndex: state.currentTile },
     [...state.movesQueue, direction]
