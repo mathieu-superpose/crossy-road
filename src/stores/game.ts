@@ -14,6 +14,11 @@ const useGameStore = create<IGameStore>((set) => ({
   endGame: () => {
     set({ status: "gameover" })
   },
+  playPause: () => {
+    set((state) => ({
+      status: state.status === "running" ? "paused" : "running",
+    }))
+  },
   reset: () => {
     useMapStore.getState().reset()
     resetPlayerStore()

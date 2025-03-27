@@ -1,7 +1,12 @@
 import { useEffect } from "react"
-import { queueMove } from "../stores/player"
+import { playPauseGame, queueMove } from "../stores/player"
+
+import useGameStore from "../stores/game"
 
 export function useEventListeners() {
+  const gameStatus = useGameStore((state) => state.status)
+  const reset = useGameStore((state) => state.reset)
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowUp") {
@@ -16,6 +21,18 @@ export function useEventListeners() {
       } else if (event.key === "ArrowRight") {
         event.preventDefault()
         queueMove("right")
+        // Pause the game when P key is pressed
+      } else if (event.key === "p") {
+        event.preventDefault()
+        playPauseGame()
+        // Restart the game when Enter key is pressed
+      } else if (event.key === "Enter") {
+        event.preventDefault()
+
+        console.log("Enter key pressed, status: ", gameStatus)
+        if (gameStatus === "gameover") {
+          reset()
+        }
       }
     }
 

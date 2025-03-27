@@ -7,7 +7,7 @@ function Result() {
   const score = useGameStore((state) => state.score)
   const reset = useGameStore((state) => state.reset)
 
-  if (status === "running") return null
+  if (status !== "gameover") return null
 
   return (
     <div id="result-container">

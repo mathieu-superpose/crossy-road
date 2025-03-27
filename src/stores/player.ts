@@ -12,6 +12,11 @@ export let state: TPlayerState = {
   ref: null,
 }
 
+export function playPauseGame() {
+  const playPause = useGameStore.getState().playPause
+  playPause()
+}
+
 export function queueMove(direction: TDirection) {
   const gameStatus = useGameStore.getState().status
   if (gameStatus !== "running") {

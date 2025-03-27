@@ -5,13 +5,20 @@ import { useFrame } from "@react-three/fiber"
 import { state, stepCompleted } from "../stores/player"
 import { tileSize } from "../data/constants"
 
+import useGameStore from "../stores/game"
+
 export function usePlayerAnimation(ref: RefObject<THREE.Group | null>) {
+  const gameStatus = useGameStore((state) => state.status)
   const moveClock = new THREE.Clock(false)
 
   useFrame(() => {
     if (!ref.current) return
     if (!state.movesQueue.length) return
     const player = ref.current
+
+    if (gameStatus !== "running") {
+      return
+    }
 
     if (!moveClock.running) moveClock.start()
 

@@ -4,4 +4,5 @@ export interface IGameStore {
   updateScore: (rowIndex: number) => void
   endGame: () => void
   reset: () => void
+  playPause: () => void
 }

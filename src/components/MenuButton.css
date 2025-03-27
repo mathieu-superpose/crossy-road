@@ -1,0 +1,47 @@
+.MenuButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MenuButton button {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid lightgray;
+  box-shadow: 3px 5px 0px 0px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  outline: none;
+
+  position: relative;
+
+  & .barTop,
+  & .barBot {
+    height: 5px;
+    width: 30px;
+    background-color: black;
+    position: absolute;
+    transition: all 0.3s;
+  }
+
+  & .barTop {
+    top: 10px;
+  }
+
+  & .barBot {
+    top: 25px;
+  }
+}
+
+.MenuButton button.open .barTop {
+  transform: rotate(45deg);
+  top: 18px;
+}
+
+.MenuButton button.open .barBot {
+  transform: rotate(-45deg);
+  top: 18px;
+}

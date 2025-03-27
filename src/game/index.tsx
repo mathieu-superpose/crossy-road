@@ -5,6 +5,8 @@ import Map from "./components/Map"
 import Controls from "../components/Controls"
 import Score from "../components/Score"
 import Result from "../components/Result"
+import Settings from "../components/Settings"
+import MenuButton from "../components/MenuButton"
 
 import "./Game.css"
 
@@ -18,6 +20,8 @@ function Game() {
       <Controls />
       <Score />
       <Result />
+      <Settings />
+      <MenuButton />
     </div>
   )
 }
