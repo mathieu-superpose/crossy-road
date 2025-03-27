@@ -4,6 +4,8 @@ import useMapStore from "../stores/map.ts"
 
 import { IPosition, TDirection } from "../types/playerTypes"
 
+import useGameStore from "../stores/game.ts"
+
 export function calculateFinalPosition(
   currentPosition: IPosition,
   moves: TDirection[]
@@ -40,8 +42,11 @@ export function endsUpInValidPosition(
   // Calculate where the player would end up after the move
   const finalPosition = calculateFinalPosition(currentPosition, moves)
 
+  const currentRow = useGameStore.getState().score
+
   // Detect if we hit the edge of the board
   if (
+    finalPosition.rowIndex < currentRow - 10 ||
     finalPosition.rowIndex === -1 ||
     finalPosition.tileIndex === minTileIndex - 1 ||
     finalPosition.tileIndex === maxTileIndex + 1

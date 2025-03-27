@@ -19,6 +19,7 @@ export function playPauseGame() {
 
 export function queueMove(direction: TDirection) {
   const gameStatus = useGameStore.getState().status
+  
   if (gameStatus !== "running") {
     return
   }

@@ -1,6 +1,7 @@
 import Forest from "./Forest.tsx"
 import CarLane from "./CarLane.tsx"
 import TruckLane from "./TruckLane.tsx"
+import GatedLane from "./GatedLane.tsx"
 
 function Row({
   rowIndex,
@@ -13,6 +14,10 @@ function Row({
 }) {
   if (currentRow > rowIndex + 10) {
     return null
+  }
+
+  if (currentRow === rowIndex + 10) {
+    return <GatedLane rowIndex={rowIndex} />
   }
 
   switch (rowData.type) {
