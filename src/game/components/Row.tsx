@@ -2,7 +2,19 @@ import Forest from "./Forest.tsx"
 import CarLane from "./CarLane.tsx"
 import TruckLane from "./TruckLane.tsx"
 
-function Row({ rowIndex, rowData }: { rowIndex: number; rowData: any }) {
+function Row({
+  rowIndex,
+  rowData,
+  currentRow,
+}: {
+  rowIndex: number
+  rowData: any
+  currentRow: number
+}) {
+  if (currentRow > rowIndex + 10) {
+    return null
+  }
+
   switch (rowData.type) {
     case "forest": {
       return <Forest rowIndex={rowIndex} rowData={rowData} />
