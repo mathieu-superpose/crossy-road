@@ -12,13 +12,17 @@ export function usePlayerAnimation(ref: RefObject<THREE.Group | null>) {
   const moveClock = new THREE.Clock(false)
 
   useFrame(() => {
-    if (!ref.current) return
-    if (!state.movesQueue.length) return
-    const player = ref.current
-
+    if (!ref.current) {
+      return
+    }
+    if (!state.movesQueue.length) {
+      return
+    }
     if (gameStatus !== "running") {
       return
     }
+
+    const player = ref.current
 
     if (!moveClock.running) moveClock.start()
 

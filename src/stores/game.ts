@@ -8,6 +8,10 @@ import { IGameStore } from "../types/gameTypes"
 const useGameStore = create<IGameStore>((set) => ({
   status: "running",
   score: 0,
+  boundMargin: 10,
+  setBoundMargin: (margin) => {
+    set({ boundMargin: margin })
+  },
   updateScore: (rowIndex) => {
     set((state) => ({ score: Math.max(rowIndex, state.score) }))
   },

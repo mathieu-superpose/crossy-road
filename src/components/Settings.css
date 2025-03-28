@@ -13,13 +13,28 @@
     align-items: center;
     background-color: white;
     padding: 20px;
-  }
 
-  button {
-    background-color: red;
-    padding: 20px 50px 20px 50px;
-    font-family: inherit;
-    font-size: inherit;
-    cursor: pointer;
+    & h1 {
+      margin-bottom: 20px;
+      border-bottom: 1px solid black;
+    }
+
+    & h2 {
+      font-size: 1rem;
+    }
+
+    & .zoom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      & button {
+        padding: 2px 5px 2px 5px;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: pointer;
+      }
+    }
   }
 }

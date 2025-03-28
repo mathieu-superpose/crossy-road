@@ -1,7 +1,7 @@
+import { Bounds } from "@react-three/drei"
 import { useEffect, useRef } from "react"
 import * as THREE from "three"
 import { useThree } from "@react-three/fiber"
-import { Bounds } from "@react-three/drei"
 
 import { usePlayerAnimation } from "../../hooks/usePlayerAnimation.ts"
 
@@ -9,7 +9,10 @@ import DirectionalLight from "./DriectionalLight.tsx"
 
 import { setRef } from "../../stores/player.ts"
 
+import useGameStore from "../../stores/game.ts"
+
 function Player() {
+  const zoom = useGameStore((state) => state.boundMargin)
   const playerRef = useRef<THREE.Group>(null)
   const lightRef = useRef<THREE.DirectionalLight>(null)
 
@@ -23,10 +26,15 @@ function Player() {
     }
 
     playerRef.current.add(camera)
-    lightRef.current.target = playerRef.current;
+    lightRef.current.target = playerRef.current
 
     setRef(playerRef.current)
   }, [])
+
+  useEffect(() => {
+    camera.zoom = zoom
+    camera.updateProjectionMatrix()
+  }, [zoom, camera])
 
   return (
     <Bounds fit clip observe margin={10}>

@@ -12,8 +12,8 @@ function MenuButton() {
     <div className="MenuButton">
       <div>
         <button
-          onClick={() => playPauseGame()}
-          className={gameStatus === "running" ? "" : "open"}
+          onClick={() => (gameStatus !== "gameover" ? playPauseGame() : null)}
+          className={gameStatus === "paused" ? "open" : ""}
         >
           <div className="barTop" />
           <div className="barBot" />
