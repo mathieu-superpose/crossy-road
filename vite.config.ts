@@ -5,5 +5,5 @@ import react from "@vitejs/plugin-react"
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), glsl()],
-  base: "https://mathieu-superpose.github.io/crossy-road/",
+  base: "/crossy-road/",
 })
