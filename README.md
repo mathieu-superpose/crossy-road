@@ -4,6 +4,10 @@ Crossy Road written with React Three Fiber following [Hunor Márton Borbély](ht
 
 <img src="public/capture.png" alt="Crossy Road screen capture" >
 
+## Deployment
+
+[Try it](https://mathieu-superpose.github.io/crossy-road/)
+
 ## Controls
 
 **Directions:** Keyboard Arrows + on screen controls
