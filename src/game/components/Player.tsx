@@ -31,6 +31,7 @@ function Player() {
     setRef(playerRef.current)
   }, [])
 
+  // Zoom update
   useEffect(() => {
     camera.zoom = zoom
     camera.updateProjectionMatrix()

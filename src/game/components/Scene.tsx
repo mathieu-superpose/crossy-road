@@ -10,6 +10,7 @@ function Scene({ children }: { children: React.ReactNode }) {
       camera={{
         up: [0, 0, 1],
         position: [300, -300, 300],
+        zoom: 5,
       }}
     >
       <Environment />
