@@ -2,7 +2,7 @@
 
 Crossy Road written with React Three Fiber following [Hunor Márton Borbély](https://javascriptgametutorials.com/tutorials/react-three-fiber/crossy-road) tutorial
 
-<img src="public/capture.png" alt="Crossy Road screen capture" >
+<img src="/public/capture.png" alt="Crossy Road screen capture" >
 
 ## Deployment
 
