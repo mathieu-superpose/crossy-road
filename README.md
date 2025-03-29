@@ -1,6 +1,25 @@
-# React Three Fiber Starter
+# Crossy Road
 
-A minimal react three fiber starter for simple projects
+Crossy Road written with React Three Fiber following [Hunor Márton Borbély](https://javascriptgametutorials.com/tutorials/react-three-fiber/crossy-road) tutorial
+
+## Controls
+
+**Directions:** Keyboard Arrows + on screen controls
+**Pause:** "P" key + Menu button
+
+## Features
+
+- [x] Start + Retry new game
+- [x] Display score
+- [x] Adjust camera zoom
+
+## Pending
+
+- [ ] Home screen
+- [ ] Best score
+- [ ] Game modes
+- [ ] Various levels
+- [ ] Bonuses
 
 ## Technology
 
